@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 asdasdafasdfasd
 dfadsfadsf
 rtbwretbe
+=======
+asdasdaawvwa
+>>>>>>> ximing
