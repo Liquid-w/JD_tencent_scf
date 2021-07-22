@@ -1,12 +1,12 @@
 name: 1获取最新脚本
 on:
   schedule:
-    - cron: '50 */3 * * *'
+    - cron: '5 */3 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync-1908002701-scripts
+    types: sync-zero205-scripts
 jobs:
   repo-sync:
     env:
@@ -19,11 +19,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync 1908002701-scripts
+      - name: sync zero205-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/1908002701/JD.git"
+          source_repo: "https://github.com/zero205/JD_tencent_scf.git"
           source_branch: "main"
           destination_branch: "main"
           github_token: ${{ secrets.PAT }}
@@ -34,6 +34,6 @@ jobs:
         with:
           src: ${{ secrets.SRC_USER }}
           dst: ${{ secrets.DST_USER }}
-          static_list: "JD"
+          static_list: "JD_tencent_scf"
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
